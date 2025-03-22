@@ -1,0 +1,25 @@
+{
+  "name": "trip_planner",
+  "version": "1.0.0",
+  "description": "tech challenge",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "start-server": "node app.js",
+    "test": "mocha"
+  },
+  "author": "vonblubba",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "chai": "^5.2.0",
+    "mocha": "^11.1.0",
+    "nodemon": "^3.1.9"
+  }
+}
