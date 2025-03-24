@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "tech challenge",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "nodemon app.js",
     "start-server": "node app.js",
@@ -19,7 +20,9 @@
   },
   "devDependencies": {
     "chai": "^5.2.0",
+    "chai-http": "^5.1.1",
     "mocha": "^11.1.0",
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.9",
+    "sinon": "^19.0.4"
   }
 }
