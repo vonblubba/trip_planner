@@ -1,7 +1,8 @@
-import sinon from 'sinon';
 import { use, expect } from 'chai';
 import chaiHttp from 'chai-http';
 const chai = use(chaiHttp);
+
+import nock from 'nock';
 
 import jwt from 'jsonwebtoken';
 
@@ -45,6 +46,11 @@ const remoteApiResponse = [
       "display_name": "from SYD to MEL by flight"
   }
 ];
+
+const scope = nock(process.env.BIZAWAY_API_HOST + '/')
+  .persist()
+  .get('/default/trips?origin=SYD&destination=MEL')
+  .reply(200, remoteApiResponse);
 
 const fastestResponse = [
   {

@@ -1,6 +1,3 @@
-import fs from 'fs';
-import path from 'path';
-
 async function fetchTrips(origin, destination) {
     const response = await fetch(
       `${process.env.BIZAWAY_API_HOST}/default/trips?` + new URLSearchParams({
@@ -38,7 +35,7 @@ export const getTrips = (req, res, next) => {
 
   fetchTrips(req.query.origin, req.query.destination)
     .then(data => {
-      var trips = [];
+      let trips = [];
       if (req.query.sort_by === 'fastest') {
         trips = data.sort((a,b) => a.duration - b.duration);
       } else {
