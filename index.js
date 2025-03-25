@@ -3,6 +3,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 
 import tripRoutes from './routes/trip.js';
+import authRoutes from './routes/auth.js';
 
 const app = express();
 
@@ -10,6 +11,7 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.use('/api/v1', authRoutes);
 app.use('/api/v1', tripRoutes);
 
 app.use((error, req, res, next) => {
